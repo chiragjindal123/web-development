@@ -1,0 +1,71 @@
+
+/* class selector and common selector */
+p,a{
+    color: green;
+}
+
+li{
+    list-style-type:square;
+}
+
+.special{
+    color: orange;
+    font-weight: bold;
+}
+
+span.special{
+    color: blueviolet;
+}
+
+li em{
+    color: blue;
+}
+
+h1 +p {
+    font-size:30px;
+}
+
+
+a:hover{
+    color: aqua;
+    text-decoration:none;
+}
+
+
+body h1+p .hello{
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+}
+
+/* id selector */
+
+
+#heading{
+    color: red;
+    background-color: black;
+    padding: 10px;
+    margin-right: 77%;
+}
+
+p#one{
+    color: rebeccapurple;
+}
+
+
+/* attribute selector */
+
+li[class]{
+    color:red ;
+    font-size: 200%;
+}
+
+li[class="a"]{
+    color:blue ;
+    font-size: 300%;
+}
+
+li[class~="c"]{
+    color:yellow;
+}
+

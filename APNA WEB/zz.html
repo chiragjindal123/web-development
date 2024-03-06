@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+<script>
+let gameChar_x;
+let gameChar_y;
+let treePos_x;
+let treePos_y;
+let canyon;
+
+function setup() {
+  createCanvas(400, 400);
+  gameChar_x = width / 2;
+  gameChar_y = height - 50;
+  treePos_x = 100;
+  treePos_y = height - 50;
+  canyon = { x_pos: 150, width: 100 };
+}
+
+function draw() {
+  background(135, 206, 235); // Sky color
+
+  // Draw ground
+  fill(34, 139, 34);
+  rect(0, height - 50, width, 50);
+
+  // Draw tree
+  fill(139, 69, 19); // Brown
+  rect(treePos_x - 10, treePos_y - 60, 20, 60);
+  fill(0, 128, 0); // Green
+  triangle(treePos_x - 50, treePos_y - 60, treePos_x, treePos_y - 120, treePos_x + 50, treePos_y - 60);
+
+  // Draw canyon
+  fill(100, 100, 100); // Gray
+  rect(canyon.x_pos, height - 50, canyon.width, 50);
+
+  // Draw character
+  fill(255, 0, 0); // Red
+  ellipse(gameChar_x, gameChar_y - 20, 20, 20);
+  rect(gameChar_x - 10, gameChar_y, 20, 40);
+}
+
+function mousePressed() {
+  if (mouseY >= height - 50) {
+    gameChar_x = mouseX;
+    gameChar_y = mouseY - 60;
+  }
+}
+</script>
+</body>
+</html>
